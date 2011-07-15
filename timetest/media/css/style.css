@@ -167,7 +167,19 @@ a:hover { color: #036; }
  *
  * Author: 
  */
+#main {
+    padding: 20px;
+    font-size: 20px;
+    font-family: Georgia;
+}
 
+#main h1 {
+    font-size: 36px;
+}
+
+#main p {
+    margin-top: 20px;
+}
 
 
 

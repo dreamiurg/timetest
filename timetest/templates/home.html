@@ -1,6 +1,24 @@
 ﻿{% extends "base_layout.html" %}
 
 {% block main %}
-Hello, world!
+<h1><a href="{% url home %}">Hello, world!</a></h1>
+<p>The UTC time now is {{ utcnow|date:"r" }}</p>
+
+<form method="post" action="{% url home %}">
+{% csrf_token %}
+{{ form.as_ul }}
+<p>
+    <input type="submit" name="Add comment"/>
+</p>
+</form>
+
+<hr>
+
+{% for c in comments %}
+<ul>
+    <li><b>{{ c.created_at|date:"r" }}</b>: {{ c.comment|escape|linebreaksbr }}</li>
+</ul>
+{% endfor %}
+    
 {% endblock %}
 
