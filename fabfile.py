@@ -115,6 +115,7 @@ def setup():
     drop_database();
     create_database()
     populate_database()
+    migrate()
     install_apache_conf()
     apache_restart()
     
