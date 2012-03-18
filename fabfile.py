@@ -354,7 +354,7 @@ def _get_vagrant_config():
     Parses vagrant configuration and returns it as dict of ssh parameters
     and their values
     """
-    result = local('vagrant ssh_config', capture=True)
+    result = local('vagrant ssh-config', capture=True)
     conf = {}
     for line in iter(result.splitlines()):
         parts = line.split()
