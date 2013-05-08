@@ -5,7 +5,9 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
     chef.json.merge!({
       :mysql => {
-        :server_root_password => "root"
+        :server_root_password => "root",
+        :server_debian_password => "root",
+        :server_repl_password => "root"
       }
     })
     
