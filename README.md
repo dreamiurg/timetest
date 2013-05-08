@@ -14,7 +14,7 @@ Install prerequisites
     $ ... install ruby
     $ ... install VirtualBox
     $ gem install vagrant
-    $ pip install fab jinja2
+    $ pip install fabric jinja2
 	
 
 Clone this repo and get submodules
