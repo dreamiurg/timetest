@@ -14,7 +14,7 @@ Install prerequisites
     $ ... install ruby
     $ ... install VirtualBox
     $ gem install vagrant
-    $ pip install fab
+    $ pip install fab jinja2
 	
 
 Clone this repo and get submodules
@@ -37,3 +37,5 @@ Set up apache configuration on VM, create database, etc.
     $ fab setup vagrant
 	
 Test that everything is up
+
+    $ curl -I http://localhost:8080

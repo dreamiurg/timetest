@@ -93,7 +93,7 @@ def vagrant():
     
     # get vagrant ssh setup
     vagrant_config = _get_vagrant_config()
-    env.key_filename = vagrant_config['IdentityFile']
+    env.key_filename = vagrant_config['IdentityFile'].strip('"') # strip leading and trailing double quotes introduced by vagrant 1.1
     env.hosts = ['%s:%s' % (vagrant_config['HostName'], vagrant_config['Port'])]
     env.user = vagrant_config['User']
     
@@ -264,7 +264,7 @@ def install_requirements():
     Install the required packages using pip.
     """
     print(_yellow('>>> starting %s()' % _fn()))
-    virtualenv('pip install -q -E %(env_path)s -r %(repo_path)s/requirements.txt' % env)
+    run('%(env_path)s/bin/pip install -q -r %(repo_path)s/requirements.txt' % env)
 
 
 def install_apache_conf():
