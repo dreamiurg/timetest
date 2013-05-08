@@ -3,7 +3,6 @@ Vagrant::Config.run do |config|
 
   # Enable and configure the chef solo provisioner
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "cookbooks"
     chef.json.merge!({
       :mysql => {
         :server_root_password => "root"
@@ -14,6 +13,6 @@ Vagrant::Config.run do |config|
   end
   
   # forward ports
-  config.vm.forward_port("web", 80, 8080)
-  config.vm.forward_port("mysql", 3306, 8806)
+  config.vm.forward_port 80, 8080
+  config.vm.forward_port 3306, 8806
 end
