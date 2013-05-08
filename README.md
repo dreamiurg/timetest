@@ -14,12 +14,15 @@ Install prerequisites
     $ ... install ruby
     $ ... install VirtualBox
     $ gem install vagrant
+    $ pip install fab
+	
 
 Clone this repo and get submodules
 
-	$ git clone https://github.com/dreamiurg/timetest.git
-	$ cd timetest
-	$ git submodule init
+    $ git clone https://github.com/dreamiurg/timetest.git
+    $ cd timetest
+    $ git submodule init
+    $ git submodule update
 	
 Add lucid32 vagrant box
 
@@ -28,3 +31,9 @@ Add lucid32 vagrant box
 Create, boot up and provision VM
 	
     $ vagrant up
+	
+Set up apache configuration on VM, create database, etc.
+
+    $ fab setup vagrant
+	
+Test that everything is up

@@ -14,7 +14,8 @@ Vagrant::Config.run do |config|
     chef.add_recipe("vagrant_main")
   end
   
-  # forward ports
+  # forward 80 so we can connect to apache from host os
   config.vm.forward_port 80, 8080
+  # forwardgin mysql is not required, but convenient for mysql admin tools on host os
   config.vm.forward_port 3306, 8806
 end
